@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmação de Plano — Flame Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="script/script.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="assets/logo.png" class="w-20" alt="Flame Studio Logo">
+                <h1>Flame Studio</h1>
+            </div>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="plan" style="margin-top:2rem;">
+            <div id="plan-container" class="service-card" style="max-width:800px;margin:0 auto;">
+                <div class="service-icon">📦</div>
+                <h2 id="plan-title" style="margin-bottom:0.75rem;">Plano selecionado</h2>
+                <p id="plan-description" style="margin-bottom:1rem; color:#3a3632;"></p>
+                <ul id="plan-features" class="service-features"></ul>
+
+                <div class="service-card" style="margin-top:1.5rem;">
+                    <h3 style="margin-bottom:0.75rem;">Seus dados</h3>
+                    <form id="plan-form">
+                        <div style="display:flex; flex-direction:column; gap:0.75rem;">
+                            <label for="client-name">Seu nome</label>
+                            <input id="client-name" type="text" placeholder="Seu nome completo" style="padding:0.75rem; border:2px solid #e8e3da; border-radius:10px;">
+                            <label for="client-details">Observações</label>
+                            <textarea id="client-details" placeholder="Descreva rapidamente o que você precisa" rows="4" style="padding:0.75rem; border:2px solid #e8e3da; border-radius:10px;"></textarea>
+                            <button id="send-whatsapp" class="service-btn primary" type="submit">Enviar via WhatsApp</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer></footer>
+</body>
+</html>
