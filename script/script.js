@@ -2,7 +2,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	const phoneNumber = '5514999018749';
 
-	// Botões dos serviços - redirecionamento direto ao WhatsApp
+	const hamburger = document.querySelector('.hamburger');
+	const navMenu = document.querySelector('.nav-menu');
+
+	if (hamburger && navMenu) {
+		hamburger.addEventListener('click', () => {
+			hamburger.classList.toggle('active');
+			navMenu.classList.toggle('active');
+			
+			const isExpanded = hamburger.classList.contains('active');
+			hamburger.setAttribute('aria-expanded', isExpanded);
+		});
+
+		const navLinks = navMenu.querySelectorAll('a');
+		navLinks.forEach(link => {
+			link.addEventListener('click', () => {
+				hamburger.classList.remove('active');
+				navMenu.classList.remove('active');
+				hamburger.setAttribute('aria-expanded', 'false');
+			});
+		});
+	}
+
 	const serviceButtons = document.querySelectorAll('.service-card .service-btn');
 	if (serviceButtons.length) {
 		serviceButtons.forEach((btn) => {
@@ -16,7 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	}
 
-	// CTA "Fale Conosco" abre WhatsApp
 	const ctaButton = document.querySelector('#cta button');
 	if (ctaButton) {
 		ctaButton.addEventListener('click', (e) => {
@@ -27,7 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	}
 
-	// Links de "Contato" abrem WhatsApp
 	const contactLinks = document.querySelectorAll('a[href*="contato"], a[href*="#contato"]');
 	if (contactLinks.length) {
 		contactLinks.forEach((a) => {
