@@ -5,16 +5,17 @@
 }
 
 :root {
-    --warm-white: #faf8f5;
-    --cream: #f5f2ed;
-    --sand: #e8e3da;
-    --warm-gray: #d4cfc4;
-    --charcoal: #3a3632;
-    --dark-warm: #2d2a26;
-    --accent-warm: #e9584e;
-    --accent-gold: #df105f;
-    --shadow: rgba(58, 54, 50, 0.08);
-    --shadow-hover: rgba(58, 54, 50, 0.12);
+    --warm-white: #fffdf9;
+    --cream: #fff7f1;
+    --sand: #f1e6dc;
+    --warm-gray: #c2b8b0;
+    --charcoal: #0b0b16;
+    --dark-warm: #0b0b16;
+    --accent-warm: #e5094b;
+    --accent-gold: #ac1542;
+    --accent-deep: #6e0c19;
+    --shadow: rgba(11, 11, 22, 0.08);
+    --shadow-hover: rgba(11, 11, 22, 0.16);
 }
 
 body {
@@ -25,7 +26,7 @@ body {
 }
 
 header {
-    background: rgba(250, 248, 245, 0.95);
+    background: rgba(255, 253, 249, 0.95);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--sand);
     position: sticky;
@@ -115,7 +116,7 @@ nav ul li:last-child a {
     background: linear-gradient(135deg, var(--accent-warm), var(--accent-gold));
     color: var(--warm-white);
     font-weight: 600;
-    box-shadow: 0 2px 8px rgba(212, 165, 116, 0.3);
+    box-shadow: 0 2px 8px rgba(229, 9, 75, 0.28);
 }
 
 nav ul li:last-child a::before {
@@ -124,7 +125,7 @@ nav ul li:last-child a::before {
 
 nav ul li:last-child a:hover {
     background: linear-gradient(135deg, var(--accent-gold), var(--accent-warm));
-    box-shadow: 0 4px 12px rgba(201, 50, 50, 0.4);
+    box-shadow: 0 4px 12px rgba(172, 21, 66, 0.4);
     transform: translateY(-2px);
 }
 
@@ -175,7 +176,7 @@ nav ul li:last-child a:hover {
         left: -100%;
         top: 85px;
         flex-direction: column;
-        background: rgba(250, 248, 245, 0.98);
+        background: rgba(255, 253, 249, 0.98);
         backdrop-filter: blur(12px);
         width: 100%;
         text-align: center;
@@ -228,43 +229,94 @@ footer {
     color: var(--charcoal);
     font-size: 0.9rem;
 }
-
 #cta {
-    background: var(--cream);
-    padding: 3rem;
-    border: 4px solid var(--sand);
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 4px 12px var(--shadow);
-    margin-top: 2rem;
+  position: relative;
+  min-height: 100vh;
+  padding: 120px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0f0f14;
+  overflow: hidden;
+  color: #ffffff;
 }
+
+.cta-shape {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle at top left, #ff6a00, #ff0066);
+  border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
+  filter: blur(80px);
+  top: -150px;
+  right: -150px;
+  animation: float 8s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(40px); }
+  100% { transform: translateY(0); }
+}
+
+.cta-content {
+  position: relative;
+  max-width: 900px;
+  z-index: 2;
+  text-align: left;
+}
+
+.cta-eyebrow {
+  font-family: 'Fraunces', serif;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #ff6a00;
+  display: block;
+  margin-bottom: 20px;
+}
+
 #cta h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: var(--dark-warm);
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 800;
+  line-height: 1.05;
+  margin-bottom: 30px;
 }
+
+#cta h2 span {
+  background: linear-gradient(90deg, #ff6a00, #ff0066);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 #cta p {
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
-    color: var(--charcoal);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.2rem;
+  max-width: 700px;
+  line-height: 1.7;
+  color: #d0d0d8;
+  margin-bottom: 50px;
 }
-#cta button {
-    background: linear-gradient(135deg, var(--accent-warm), var(--accent-gold));
-    color: var(--warm-white);
-    border: none;
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    font-weight: 600;
-    border-radius: 8px;
-    cursor: pointer;
-    box-shadow: 0 2px 8px rgba(201, 50, 50, 0.3);
-    transition: all 0.3s ease;
+
+.cta-button {
+  font-family: 'Archivo', sans-serif;
+  font-size: 1rem;
+  padding: 18px 48px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #ff6a00, #ff0066);
+  color: #ffffff;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.4s ease;
+  letter-spacing: 1px;
 }
-#cta button:hover {
-    background: linear-gradient(135deg, var(--accent-gold), var(--accent-warm));
-    box-shadow: 0 4px 12px rgba(201, 50, 50, 0.4);
-    transform: translateY(-2px);
+
+.cta-button:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 5px 25px rgba(255, 0, 102, 0.4);
 }
+
 
 #metodologia {
     padding: 4rem 0;
@@ -330,8 +382,8 @@ footer {
     right: 1rem;
     font-size: 0.75rem;
     font-weight: 700;
-    color: var(--accent-warm);
-    background: rgba(233, 88, 78, 0.1);
+    color: var(--accent-deep);
+    background: rgba(110, 12, 25, 0.12);
     padding: 0.25rem 0.6rem;
     border-radius: 20px;
     letter-spacing: 0.05em;
@@ -419,12 +471,12 @@ footer {
 }
 
 .service-card.featured {
-    border: 3px solid var(--accent-warm);
-    background: linear-gradient(135deg, rgba(233, 88, 78, 0.03), rgba(223, 16, 95, 0.03));
+    border: 3px solid var(--accent-deep);
+    background: linear-gradient(135deg, rgba(110, 12, 25, 0.06), rgba(172, 21, 66, 0.05));
 }
 
 .service-card.featured:hover {
-    box-shadow: 0 16px 40px rgba(233, 88, 78, 0.25);
+    box-shadow: 0 16px 40px rgba(110, 12, 25, 0.28);
 }
 
 .badge {
@@ -439,7 +491,7 @@ footer {
     font-weight: 700;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    box-shadow: 0 4px 12px rgba(233, 88, 78, 0.3);
+    box-shadow: 0 4px 12px rgba(229, 9, 75, 0.32);
 }
 
 .service-icon {
@@ -503,11 +555,11 @@ footer {
     background: linear-gradient(135deg, var(--accent-warm), var(--accent-gold));
     color: var(--warm-white);
     border: none;
-    box-shadow: 0 4px 12px rgba(233, 88, 78, 0.3);
+    box-shadow: 0 4px 12px rgba(229, 9, 75, 0.32);
 }
 
 .service-btn.primary:hover {
-    box-shadow: 0 6px 20px rgba(233, 88, 78, 0.4);
+    box-shadow: 0 6px 20px rgba(172, 21, 66, 0.42);
     transform: translateY(-3px);
 }
 
