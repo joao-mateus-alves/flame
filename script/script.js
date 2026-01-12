@@ -59,5 +59,17 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	}
 
+	// Smooth scroll for internal anchors (excluding contact which is hijacked above)
+	const internalLinks = document.querySelectorAll('a[href^="#"]');
+	internalLinks.forEach((link) => {
+		const href = link.getAttribute('href');
+		if (!href || href === '#' || href.toLowerCase().includes('contato')) return;
+		link.addEventListener('click', (e) => {
+			e.preventDefault();
+			const target = document.querySelector(href);
+			if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+		});
+	});
+
 });
 
